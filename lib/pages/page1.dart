@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:date_time_picker/date_time_picker.dart';
 
 class PageSatu extends StatefulWidget {
   @override
@@ -141,7 +142,65 @@ class _PageSatuState extends State<PageSatu> {
                         color: Colors.redAccent,
                         elevation: 7.0,
                         child: MaterialButton(
-                          onPressed: () {},
+                          // ALERT DIALOG FORM BOOKING
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  scrollable: true,
+                                  title: Text('Form Booking'),
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Form(
+                                      child: Column(
+                                        children: <Widget>[
+                                          DateTimePicker(
+                                            type: DateTimePickerType
+                                                .dateTimeSeparate,
+                                            dateMask: 'd MMM, yyyy',
+                                            initialValue:
+                                                DateTime.now().toString(),
+                                            firstDate: DateTime(2000),
+                                            lastDate: DateTime(2100),
+                                            icon: Icon(Icons.event),
+                                            dateLabelText: 'Tanggal / Hari',
+                                            timeLabelText: 'Jam',
+                                            onChanged: (val) => print(val),
+                                            validator: (val) {
+                                              print(val);
+                                              return null;
+                                            },
+                                            onSaved: (val) => print(val),
+                                          ),
+                                          TextFormField(
+                                            decoration: InputDecoration(
+                                              labelText:
+                                                  'Lama Sewa Lapang / Jam',
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  actions: [
+                                    RaisedButton(
+                                      child: Text(
+                                        'SUBMIT',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Montserrat'),
+                                      ),
+                                      onPressed: () {
+                                        // your code
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
                           child: Center(
                             child: Text(
                               'BOOKING SEKARANG',

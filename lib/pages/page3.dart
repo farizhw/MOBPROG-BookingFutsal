@@ -10,8 +10,17 @@ class _PageTigaState extends State<PageTiga> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cek Jadwal'),
+        title: Text('Tentang Aplikasi'),
         backgroundColor: Colors.redAccent,
+      ),
+      body: Center(
+        child: Text(
+          'Aplikasi ini di buat untuk memenuhi tugas kuliah :)',
+          style: TextStyle(
+              color: Colors.black26,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Montserrat'),
+        ),
       ),
     );
   }

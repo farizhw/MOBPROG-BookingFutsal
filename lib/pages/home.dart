@@ -48,9 +48,9 @@ class _HomePageState extends State<HomePage> {
                 // ignore: deprecated_member_use
                 title: Text('Riwayat')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_today_rounded),
+                icon: Icon(Icons.announcement_rounded),
                 // ignore: deprecated_member_use
-                title: Text('Cek Jadwal'))
+                title: Text('Tentang Aplikasi'))
           ],
         ),
       ),
