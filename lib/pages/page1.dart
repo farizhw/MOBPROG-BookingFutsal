@@ -15,7 +15,7 @@ class _PageSatuState extends State<PageSatu> {
         backgroundColor: Colors.redAccent,
       ),
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Image.asset(
               "assets/futsal/bg.jpg",
