@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "737923418062",
+    "project_id": "bo-futsal",
+    "storage_bucket": "bo-futsal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737923418062:android:15b0380bb024e0196acd9f",
+        "android_client_info": {
+          "package_name": "com.example.app_fullen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737923418062-00emagseitq5ocm6h1k0bpac38o9k1ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8N18j0hA7FFAH8b1wgvqYCMShd53G76c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737923418062-00emagseitq5ocm6h1k0bpac38o9k1ts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
