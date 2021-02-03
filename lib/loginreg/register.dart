@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:app_fullen/register.dart';
 import 'package:app_fullen/pages/home.dart';
+import 'package:app_fullen/loginreg/login.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                    child: Text('Login',
+                    child: Text('Regist',
                         style: TextStyle(
                             fontSize: 80.0, fontWeight: FontWeight.bold)),
                   )
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: <Widget>[
                     TextField(
                       decoration: InputDecoration(
-                          labelText: 'Nama Team / Email',
+                          labelText: 'Email',
                           labelStyle: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
@@ -55,22 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                                   BorderSide(color: Colors.pinkAccent))),
                       obscureText: true,
                     ),
-                    SizedBox(height: 5.0),
-                    Container(
-                      alignment: Alignment(1.0, 0.0),
-                      padding: EdgeInsets.only(top: 15.0, left: 20.0),
-                      child: InkWell(
-                        child: Text(
-                          'Forgot Password',
-                          style: TextStyle(
-                              color: Colors.pink,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat',
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 40.0),
+                    SizedBox(height: 75.0),
                     Container(
                       height: 40.0,
                       width: 160.0,
@@ -86,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           child: Center(
                             child: Text(
-                              'LOGIN',
+                              'Create',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -103,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'You first time ?',
+                  'Have we met before ?',
                   style: TextStyle(fontFamily: 'Montserrat'),
                 ),
                 SizedBox(width: 5.0),
@@ -112,11 +97,11 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                        MaterialPageRoute(builder: (context) => LoginPage()),
                       );
                     },
                     child: Text(
-                      'Sign up',
+                      'Sign in',
                       style: TextStyle(
                           color: Colors.pink,
                           fontWeight: FontWeight.bold,

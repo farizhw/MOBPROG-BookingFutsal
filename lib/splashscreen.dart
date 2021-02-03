@@ -1,7 +1,8 @@
-import 'package:app_fullen/login.dart';
+import 'package:app_fullen/loginreg/login.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'dart:core';
 
 class SplashScreenPage extends StatefulWidget {
   @override
@@ -12,13 +13,13 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    startSplashScreen();
+    masuk();
   }
 
-  startSplashScreen() async {
+  masuk() async {
     var duration = const Duration(seconds: 2);
     return Timer(duration, () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {
         return LoginPage();
       }));
     });
