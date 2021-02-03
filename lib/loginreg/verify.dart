@@ -35,7 +35,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('An email has been sent to ${user.email} please verify'),
+        child: Text('Email sudah dikirim ke ${user.email}'),
       ),
     );
   }

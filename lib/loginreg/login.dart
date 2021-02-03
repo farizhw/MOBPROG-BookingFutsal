@@ -1,3 +1,4 @@
+import 'package:app_fullen/loginreg/reset.dart';
 import 'package:app_fullen/loginreg/verify.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -67,12 +68,36 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     },
                   ),
+                  SizedBox(height: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        child: Text(
+                          'Forget Password?',
+                          style: TextStyle(
+                              color: Colors.blueAccent,
+                              decoration: TextDecoration.underline),
+                        ),
+                        onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => ResetScreen())),
+                      )
+                    ],
+                  ),
                   SizedBox(height: 40.0),
                   Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        RaisedButton(
-                            child: Text('Signin'),
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Container(
+                        height: 40.0,
+                        width: 140.0,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.pinkAccent,
+                          color: Colors.pink,
+                          elevation: 7.0,
+                          child: MaterialButton(
                             onPressed: () {
                               auth
                                   .signInWithEmailAndPassword(
@@ -82,20 +107,47 @@ class _LoginPageState extends State<LoginPage> {
                                     MaterialPageRoute(
                                         builder: (context) => HomePage()));
                               });
-                            }),
-                        RaisedButton(
-                          child: Text('Signup'),
-                          onPressed: () {
-                            auth
-                                .createUserWithEmailAndPassword(
-                                    email: _email, password: _password)
-                                .then((_) {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => VerifyScreen()));
-                            });
-                          },
-                        )
-                      ]),
+                            },
+                            child: Text(
+                              'Sign in',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 40.0,
+                        width: 140.0,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.pinkAccent,
+                          color: Colors.pink,
+                          elevation: 7.0,
+                          child: MaterialButton(
+                            onPressed: () {
+                              auth
+                                  .createUserWithEmailAndPassword(
+                                      email: _email, password: _password)
+                                  .then((_) {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => VerifyScreen()));
+                              });
+                            },
+                            child: Text(
+                              'Sign up',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
