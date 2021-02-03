@@ -19,7 +19,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     user = auth.currentUser;
     user.sendEmailVerification();
 
-    timer = Timer.periodic(Duration(seconds: 5), (timer) {
+    timer = Timer.periodic(Duration(seconds: 2), (timer) {
       checkEmailVerivied();
     });
     super.initState();
@@ -35,7 +35,10 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Email sudah dikirim ke ${user.email}'),
+        child: Text(
+          'Email sudah dikirim ke, ${user.email}',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
