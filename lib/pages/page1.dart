@@ -112,7 +112,7 @@ class _PageSatuState extends State<PageSatu> {
                                 ),
                               ),
                               Text(
-                                'Informasi',
+                                'informasi',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               )
